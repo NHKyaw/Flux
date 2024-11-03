@@ -5,6 +5,7 @@ metadata:
   labels:
     app: nginx
   name: nginx
+  namespace: dev
 spec:
   replicas: 1
   selector:
@@ -29,6 +30,8 @@ metadata:
   creationTimestamp: null
   labels:
     app: nginx
+    kustomize.toolkit.fluxcd.io/name: flux-system
+    kustomize.toolkit.fluxcd.io/namespace: flux-system
   name: nginx
   namespace: dev
 spec:
@@ -41,4 +44,3 @@ spec:
   type: NodePort
 status:
   loadBalancer: {}
-

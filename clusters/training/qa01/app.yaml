@@ -1,22 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
-namespace: qa
 metadata:
-  name: qa
+  creationTimestamp: null
   labels:
-    app: qa
+    app: nginx
+  name: nginx
+  namespace: qa
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: qa
+      app: nginx
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
-        app: qa
+        app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
