@@ -2,7 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: qa
 resources:
-- ../dev/
-nameSuffix: "qa"
+  - ../dev/           # Reference to the base configuration
+nameSuffix: "-qa"      # Add "-qa" to resource names
 patchesStrategicMerge:
-  - qa-app.yaml
+  - qa-app.yaml        # Apply this patch specifically to customize for QA
+
