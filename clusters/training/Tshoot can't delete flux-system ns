@@ -1,1 +1,18 @@
-``` nano flux-system.json ```
+```bash
+nano flux-system.json
+
+Locate the Finalizers Section: Look for a section that resembles this:
+"finalizers": [
+    "fluxcd.io/finalizer"
+]
+
+Remove or Modify the Finalizers: You can either delete the entire finalizers field or set it to an empty array:
+"finalizers": []
+
+Step 3: Apply the Modified JSON
+Now that you have modified the JSON file, apply it to remove the finalizers:
+Execute the Following Command:
+kubectl replace --raw "/api/v1/namespaces/flux-system/finalize" -f ./flux-system.json
+
+Verify:
+kubectl get namespaces
