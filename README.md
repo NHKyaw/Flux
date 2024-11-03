@@ -1,4 +1,3 @@
+```bash
+nano flux-system.json
 
-# Flux
-
-edited by test branch:nhk
