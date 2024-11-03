@@ -1,21 +1,6 @@
-# app.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: nginx
-  name: nginx
-  namespace: qa01
+  name: nginx  # Match the name from dev
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
+  replicas: 2  # Example: change replicas or other properties

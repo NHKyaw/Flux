@@ -1,9 +1,9 @@
-# kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: qa01
+namespace: qa
 resources:
-  - ../dev/            # Reuse resources from dev
-  - namespace.yaml      # Include namespace file for qa01
+  - ../dev/  # Reference to the dev folder
+nameSuffix: "-qa01"  # Add suffix for qa01 resources
 patchesStrategicMerge:
-  - app.yaml            # Apply a patch to customize the app for qa01
+  - app.yaml  # This file should exist in qa01 and specify only the patches
+
