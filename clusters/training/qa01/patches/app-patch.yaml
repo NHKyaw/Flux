@@ -1,0 +1,7 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: qa01
+spec:
+  replicas: 3  # Override the replica count for QA
